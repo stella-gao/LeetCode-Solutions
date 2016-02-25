@@ -1,3 +1,10 @@
+/*
+P[i,j]= 1, if i==j
+      = (s[i]==s[j]),  if j=i+1
+      = (s[i]==s[j]) && P[i+1][j-1],  if j>i+1
+
+*/
+
 class Solution {
 public:
     string longestPalindrome(string s) {
