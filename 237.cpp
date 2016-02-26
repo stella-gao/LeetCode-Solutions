@@ -6,7 +6,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+ 
+// We cannot really delete the given node, but just delete its next node after copying the data of the next node to it.
+// After moving the next node to the given node, then we can delete the next node.
 
+// method 1
 class Solution {
 public:
     void deleteNode(ListNode* node) {
@@ -16,5 +20,13 @@ public:
         // node->val = next->val;
         // node->next = next->next;
         delete next;
+    }
+};
+
+// method 2
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        *node = *node -> next;
     }
 };
