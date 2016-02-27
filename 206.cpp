@@ -76,3 +76,24 @@ public:
         return p.next;
     }
 };
+
+
+//method 5
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if (head == nullptr || head->next == nullptr)  return head;
+
+        ListNode *p = new ListNode(0);  p->next = head;
+
+        ListNode *prev = head, *cur = head->next;
+
+        while (cur) {
+            prev->next = cur->next;
+            cur->next = p->next;
+            p->next = cur;
+            cur = prev->next;
+        }
+        return p->next;
+    }
+};
