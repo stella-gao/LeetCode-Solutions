@@ -14,7 +14,6 @@ public:
         H->next = head;
         
         ListNode *pre = H, *cur = head;
-        int cnt = 1;
         while (cur != NULL && cur->next != NULL) {
             ListNode *tmp = cur->next;
             pre->next = tmp;
